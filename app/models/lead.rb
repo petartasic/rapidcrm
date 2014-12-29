@@ -15,7 +15,7 @@ class Lead < ActiveRecord::Base
     end
   end
   
-  def self.test_search(query)
+  def self.text_search(query)
     if query.present?
       where("name @@ :q or company @@ :q", q: query)
     else
