@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  
+  get 'search/index'
+
+  resources :leads do
+  collection { post :import }
+  end
   get 'welcome/home'
 
   get 'welcome/about'
 
   get 'welcome/contact'
   root :to => 'welcome#home'
-  resources :leads
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
